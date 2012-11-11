@@ -1,0 +1,17 @@
+<head>
+<link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<html>
+<body>
+	<h1><%= "Please enter a number to convert!"%></h1>
+	<form action="/" method="post">  
+		<input type="text" name="number">  
+		<input type="submit">  
+	</form>  
+	<% if params[:number] == "0" || params[:number].to_i != 0 %>
+		<%= "#{params[:number].to_i.in_words.capitalize}." %>
+	<% else %>
+		<%= "Please enter a valid number" %>
+	<% end %>
+</body>
+</html>
